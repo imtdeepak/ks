@@ -37,8 +37,8 @@
       <file leaf-file-name="BubbleSort.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/ks/sorting/BubbleSort.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.73913044">
-              <caret line="45" column="27" selection-start-line="45" selection-start-column="27" selection-end-line="45" selection-end-column="27" />
+            <state vertical-scroll-proportion="0.0931677">
+              <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -535,12 +535,12 @@
       <created>1462629629308</created>
       <option name="number" value="Default" />
       <updated>1462629629308</updated>
-      <workItem from="1462629632931" duration="3888000" />
+      <workItem from="1462629632931" duration="4003000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3888000" />
+    <option name="totallyTimeSpent" value="4003000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1024" height="613" extended-state="6" />
@@ -575,6 +575,11 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$" />
+    </ignored-roots>
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
@@ -594,8 +599,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/ks/sorting/BubbleSort.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.73913044">
-          <caret line="45" column="27" selection-start-line="45" selection-start-column="27" selection-end-line="45" selection-end-column="27" />
+        <state vertical-scroll-proportion="0.0931677">
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
           <folding />
         </state>
       </provider>

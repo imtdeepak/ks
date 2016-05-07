@@ -1,8 +1,6 @@
 package com.ks.sorting;
 
-/**
- * @author 212350436
- */
+
 public class BubbleSort {
 
     public static void main(String args[]) {
