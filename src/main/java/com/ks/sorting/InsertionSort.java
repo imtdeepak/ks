@@ -18,6 +18,20 @@ package com.ks.sorting;
  */
 public class InsertionSort
 {
+    /**
+     * if data[1] < data[0] swap places
+     * if data[2] < data[1] swap places
+     * if data[1] < data[0] swap places
+     * do this until  n
+     *
+     * O(n2) Worst case
+     * O(n) Best Case
+     * O(1) Space complexity
+     *
+     *
+     * @param data
+     * @return
+     */
     public static int[] insertionSort(int[] data){
         for(int i = 1; i < data.length; i++){
             for(int j = i; j > 0; j--){
@@ -31,5 +45,25 @@ public class InsertionSort
             }
         }
         return data;
+    }
+
+    /**
+     * code as it is from study tonight
+     * @param a
+     * @return
+     */
+    public static int[] insertionSort1(int[] a){
+        for(int i=1; i<a.length; i++)
+        {
+            int key = a[i];
+            int j = i-1;
+            while(j>=0 && key < a[j])
+            {
+                a[j+1] = a[j];
+                j--;
+            }
+            a[j+1] = key;
+        }
+        return a;
     }
 }
