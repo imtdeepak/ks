@@ -19,18 +19,22 @@ package com.ks.sorting;
 public class ShellSort
 {
     public static void sort(int[] a) {
-        int gap = a.length / 2;
-        while (gap > 0) {
-            for (int i = gap; i < a.length; i++) {
+        int increment = a.length / 2;
+        while (increment > 0) {
+            for (int i = increment; i < a.length; i++) {
                 int j = i;
                 int temp = a[i];
-                while (j >= gap && a[j - gap] > temp) {
-                    a[j] = a[j - gap];
-                    j = j - gap;
+                while (j >= increment && a[j - increment] > temp) {
+                    a[j] = a[j - increment];
+                    j = j - increment;
                 }
                 a[j] = temp;
             }
-            gap--;
+            if (increment == 2) {
+                increment = 1;
+            } else {
+                increment *= (5.0 / 11);
+            }
         }
     }
 }

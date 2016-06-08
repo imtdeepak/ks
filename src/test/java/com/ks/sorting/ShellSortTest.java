@@ -24,8 +24,8 @@ public class ShellSortTest
 {
     @Test
     public void testShellSort(){
-        int[] data = {6,5,4,3,2,1,5};
-        int[] expectedOutput = {1,2,3,4,5,5,6};
+        int[] data = {73, 67, 56, 32, 52, 41, 83, 37, 32, 10};
+        int[] expectedOutput = {10, 32, 32, 37, 41, 52, 56, 67, 73, 83};
         System.out.println("input:" + Arrays.toString(data));
         ShellSort.sort(data);
         System.out.println("actualOutput:" + Arrays.toString(data));
