@@ -28,7 +28,8 @@ public class QuickSortTest
         int[] input = {6,5,4,3,2,1,5};
         int[] expectedOutput = {1,2,3,4,5,5,6};
         System.out.println("input:" + Arrays.toString(input));
-        int[] actualOutput =  QuickSort.quickSort(input);
+        new QuickSort().sort(input, 0, input.length - 1);
+        int[] actualOutput = input;
         System.out.println("actualOutput:" + Arrays.toString(actualOutput));
         Assert.assertArrayEquals(expectedOutput, actualOutput);
     }
