@@ -1,61 +1,63 @@
-/*
- * Copyright (c) 2016 General Electric Company. All rights reserved.
- *
- * The copyright to the computer software herein is the property of
- * General Electric Company. The software may be used and/or copied only
- * with the written permission of General Electric Company or in accordance
- * with the terms and conditions stipulated in the agreement/contract
- * under which the software has been supplied.
- */
 package com.ks.sorting;
 
 /**
- * com.ks.sorting
- *
- * @author 212423767
- * @version 1.0 5/19/16
- * @since 1.0
+ * @author 212350436
  */
-public class QuickSort
-{
-    public static int[] quickSort (int[] data){
-        quicksort(data, 0, data.length-1);
-        return data;
-    }
+public class QuickSort {
+    public void sort(int[] arr, int low, int high) {
+        System.out.println("low: " + low + ", high: " + high);
+        if (low < high) {
+            if (low < high) {
+            /* pi is partitioning index, arr[pi] is
+              now at right place */
+                int partioningIndex = partition(arr, low, high);
 
-    private static void quicksort(int a[], int p, int r)
-    {
-        if(p < r)
-        {
-            int q;
-            q = partition(a, p, r); //pivot and rearrange
-            quicksort(a, p, q);
-            quicksort(a, q+1, r);
+                // Recursively sort elements before
+                // partition and after partition
+                sort(arr, low, partioningIndex - 1);
+                sort(arr, partioningIndex + 1, high);
+            }
         }
     }
 
-    private static int partition(int a[], int p, int r)
-    {
-        int i, j, pivot, temp;
-        pivot = a[p];
-        i = p;
-        j = r;
-        while(true)
-        {
-            while(a[i] < pivot && a[i] != pivot)
+    /* This function takes last element as pivot,
+       places the pivot element at its correct
+       position in sorted array, and places all
+       smaller (smaller than pivot) to left of
+       pivot and all greater elements to right
+       of pivot */
+    int partition(int arr[], int low, int high) {
+        System.out.println("Partition low : " + low + " high: " + high);
+        int pivot = arr[high];
+        int i = (low - 1); // index of smaller element
+        for (int j = low; j <= high - 1; j++) {
+            // If current element is smaller than or
+            // equal to pivot
+            if (arr[j] <= pivot) {
                 i++;
-            while(a[j] > pivot && a[j] != pivot)
-                j--;
-            if(i < j)
-            {
-                temp = a[i];
-                a[i] = a[j];
-                a[j] = temp;
+
+                // swap arr[i] and arr[j]
+                int temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
             }
-            else
-            {
-                return j;
-            }
+        }
+
+        // swap arr[i+1] and arr[high] (or pivot)
+        int temp = arr[i + 1];
+        arr[i + 1] = arr[high];
+        arr[high] = temp;
+
+        return i + 1;
+    }
+
+    public static void main(String args[]) {
+        QuickSort quickSort = new QuickSort();
+        int array[] = {10, 7, 8, 9, 1, 5, 5};
+        quickSort.sort(array, 0, array.length - 1);
+
+        for (int i : array) {
+            System.out.print(i + ", ");
         }
     }
 }
