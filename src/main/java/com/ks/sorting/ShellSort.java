@@ -9,32 +9,27 @@
  */
 package com.ks.sorting;
 
-/**
- * com.ks.sorting
- *
- * @author 212423767
- * @version 1.0 6/5/16
- * @since 1.0
- */
 public class ShellSort
 {
-    public static void sort(int[] a) {
-        int increment = a.length / 2;
-        while (increment > 0) {
-            for (int i = increment; i < a.length; i++) {
-                int j = i;
-                int temp = a[i];
-                while (j >= increment && a[j - increment] > temp) {
-                    a[j] = a[j - increment];
-                    j = j - increment;
-                }
-                a[j] = temp;
-            }
-            if (increment == 2) {
-                increment = 1;
-            } else {
-                increment *= (5.0 / 11);
+    public static void sort(int[] array) {
+
+        int n = array.length;
+
+        for(int gap = n/2; gap > 0; gap /= 2) {
+            System.out.println(" gap: " + gap);
+
+            for(int i = gap; i < n; i += 1) {
+                System.out.println("i: " + i);
+
+
             }
         }
+    }
+
+    public static void main(String args[]) {
+        ShellSort shellSort = new ShellSort();
+
+        int arr[] = {12, 34, 55, 66, 55, 2, 3};
+        sort(arr);
     }
 }
