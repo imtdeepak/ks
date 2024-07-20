@@ -5,6 +5,16 @@ package com.ks.sorting;
  */
 public class QuickSort {
 
+    public static void main(String args[]) {
+        QuickSort quickSort = new QuickSort();
+        int array[] = {10, 7, 1, 8, 9};
+        quickSort.sort(array, 0, array.length - 1);
+
+        for (int i : array) {
+            System.out.print(i + ", ");
+        }
+    }
+
     public void sort(int[] arr, int low, int high) {
         //System.out.println("low: " + low + ", high: " + high);
 
@@ -48,15 +58,5 @@ public class QuickSort {
         arr[high] = temp;
 
         return i + 1;
-    }
-
-    public static void main(String args[]) {
-        QuickSort quickSort = new QuickSort();
-        int array[] = {10, 7, 1, 8, 9};
-        quickSort.sort(array, 0, array.length - 1);
-
-        for (int i : array) {
-            System.out.print(i + ", ");
-        }
     }
 }

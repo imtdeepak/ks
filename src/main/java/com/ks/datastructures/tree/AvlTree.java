@@ -4,47 +4,18 @@ package com.ks.datastructures.tree;
  * @author 212350436
  */
 public class AvlTree {
-    class Node {
-        private Node leftChild;
-        private Node rightChild;
-        private int height;
-        private int data;
-
-        public Node getLeftChild() {
-            return leftChild;
-        }
-
-        public void setLeftChild(Node leftChild) {
-            this.leftChild = leftChild;
-        }
-
-        public Node getRightChild() {
-            return rightChild;
-        }
-
-        public void setRightChild(Node rightChild) {
-            this.rightChild = rightChild;
-        }
-
-        public int getHeight() {
-            return height;
-        }
-
-        public void setHeight(int height) {
-            this.height = height;
-        }
-
-        public int getData() {
-            return data;
-        }
-
-        public void setData(int data) {
-            this.data = data;
-        }
-    }
-
-
     private Node root;
+
+    public static void main(String args[]) {
+        AvlTree avlTree = new AvlTree();
+        avlTree.insert(10);
+        avlTree.insert(20);
+        avlTree.insert(30);
+        avlTree.insert(40);
+        avlTree.insert(50);
+        avlTree.insert(25);
+        avlTree.preOrder();
+    }
 
     private int getBalanceFactor(Node node1, Node node2) {
         int balanceFactor = height(node1) - height(node2);
@@ -155,14 +126,42 @@ public class AvlTree {
         }
     }
 
-    public static void main(String args[]) {
-        AvlTree avlTree = new AvlTree();
-        avlTree.insert(10);
-        avlTree.insert(20);
-        avlTree.insert(30);
-        avlTree.insert(40);
-        avlTree.insert(50);
-        avlTree.insert(25);
-        avlTree.preOrder();
+    class Node {
+        private Node leftChild;
+        private Node rightChild;
+        private int height;
+        private int data;
+
+        public Node getLeftChild() {
+            return leftChild;
+        }
+
+        public void setLeftChild(Node leftChild) {
+            this.leftChild = leftChild;
+        }
+
+        public Node getRightChild() {
+            return rightChild;
+        }
+
+        public void setRightChild(Node rightChild) {
+            this.rightChild = rightChild;
+        }
+
+        public int getHeight() {
+            return height;
+        }
+
+        public void setHeight(int height) {
+            this.height = height;
+        }
+
+        public int getData() {
+            return data;
+        }
+
+        public void setData(int data) {
+            this.data = data;
+        }
     }
 }

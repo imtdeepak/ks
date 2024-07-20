@@ -1,40 +1,31 @@
 package com.ks.datastructures.linkedlist;
 
-import java.util.IntSummaryStatistics;
 
 /**
  * @author 212350436
  */
 public class SinglyLinkedList<E extends Comparable> {
 
-    private class Node<T> {
-        private T value;
-        private Node next;
-
-        public Node(T value){
-            this.value = value;
-        }
-
-        public T getValue() {
-            return value;
-        }
-
-        public void setValue(T value) {
-            this.value = value;
-        }
-
-        public Node getNext() {
-            return next;
-        }
-
-        public void setNext(Node next) {
-            this.next = next;
-        }
-    }
-
     private Node head;
+
     public SinglyLinkedList(){
         head = null;
+    }
+
+    public static void main(String args[]) {
+        SinglyLinkedList<Integer> singlyLinkedList = new SinglyLinkedList<Integer>();
+        singlyLinkedList.add(3);
+        singlyLinkedList.add(4);
+        singlyLinkedList.add(5);
+
+        singlyLinkedList.addFirst(15);
+        singlyLinkedList.addLast(20);
+
+        singlyLinkedList.traverse();
+
+        singlyLinkedList.remove(4);
+        System.out.println("*******************************");
+        singlyLinkedList.traverse();
     }
 
     public void add(E value){
@@ -91,19 +82,28 @@ public class SinglyLinkedList<E extends Comparable> {
         }
     }
 
-    public static void main(String args[]) {
-        SinglyLinkedList<Integer> singlyLinkedList = new SinglyLinkedList<Integer>();
-        singlyLinkedList.add(3);
-        singlyLinkedList.add(4);
-        singlyLinkedList.add(5);
+    private class Node<T> {
+        private T value;
+        private Node next;
 
-        singlyLinkedList.addFirst(15);
-        singlyLinkedList.addLast(20);
+        public Node(T value){
+            this.value = value;
+        }
 
-        singlyLinkedList.traverse();
+        public T getValue() {
+            return value;
+        }
 
-        singlyLinkedList.remove(4);
-        System.out.println("*******************************");
-        singlyLinkedList.traverse();
+        public void setValue(T value) {
+            this.value = value;
+        }
+
+        public Node getNext() {
+            return next;
+        }
+
+        public void setNext(Node next) {
+            this.next = next;
+        }
     }
 }

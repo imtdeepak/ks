@@ -1,7 +1,6 @@
 package com.ks.filehandling;
 
 import java.io.File;
-import java.util.List;
 
 /**
  * List all the files

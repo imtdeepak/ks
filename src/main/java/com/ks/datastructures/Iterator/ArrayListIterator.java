@@ -4,6 +4,7 @@ package com.ks.datastructures.Iterator;
  * Created by deepakkumar on 4/29/19.
  */
 import java.util.*;
+
 public class ArrayListIterator {
 
     static Iterator func(ArrayList mylist){

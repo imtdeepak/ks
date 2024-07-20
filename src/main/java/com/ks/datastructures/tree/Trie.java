@@ -6,45 +6,25 @@ package com.ks.datastructures.tree;
 public class Trie
 {
 
-    private class TrieNode
-    {
-        // Declare an array of 26 characters
-
-        TrieNode[] data;
-        boolean    isEnd;
-
-        TrieNode()
-        {
-            data = new TrieNode[26];
-        }
-
-        public TrieNode[] getData()
-        {
-            return data;
-        }
-
-        public void setData(TrieNode[] data)
-        {
-            this.data = data;
-        }
-
-        public boolean isEnd()
-        {
-            return isEnd;
-        }
-
-        public void setIsEnd(boolean isEnd)
-        {
-            this.isEnd = isEnd;
-        }
-    }
-
     // Root node
     TrieNode root = null;
 
     public Trie()
     {
         root = new TrieNode();
+    }
+
+    public static void main(String args[])
+    {
+        Trie trie = new Trie();
+        trie.insert("car");
+        trie.insert("cart");
+        trie.insert("card");
+
+        System.out.println("Word found: " + trie.search("car"));
+        System.out.println("Word found: " + trie.search("dummy"));
+
+        trie.printAllWords();
     }
 
     // Inserts a word into the trie.
@@ -122,16 +102,36 @@ public class Trie
         }
     }
 
-    public static void main(String args[])
+    private class TrieNode
     {
-        Trie trie = new Trie();
-        trie.insert("car");
-        trie.insert("cart");
-        trie.insert("card");
+        // Declare an array of 26 characters
 
-        System.out.println("Word found: " + trie.search("car"));
-        System.out.println("Word found: " + trie.search("dummy"));
+        TrieNode[] data;
+        boolean    isEnd;
 
-        trie.printAllWords();
+        TrieNode()
+        {
+            data = new TrieNode[26];
+        }
+
+        public TrieNode[] getData()
+        {
+            return data;
+        }
+
+        public void setData(TrieNode[] data)
+        {
+            this.data = data;
+        }
+
+        public boolean isEnd()
+        {
+            return isEnd;
+        }
+
+        public void setIsEnd(boolean isEnd)
+        {
+            this.isEnd = isEnd;
+        }
     }
 }

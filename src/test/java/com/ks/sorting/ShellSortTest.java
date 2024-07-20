@@ -9,16 +9,14 @@
  */
 package com.ks.sorting;
 
+import org.junit.jupiter.api.Test;
+
 import java.util.Arrays;
-import org.junit.Assert;
-import org.junit.Test;
+
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 /**
- * com.ks.sorting
- *
- * @author 212423767
- * @version 1.0 6/5/16
- * @since 1.0
+ * @author
  */
 public class ShellSortTest
 {
@@ -29,6 +27,6 @@ public class ShellSortTest
         System.out.println("input:" + Arrays.toString(data));
         ShellSort.sort(data);
         System.out.println("actualOutput:" + Arrays.toString(data));
-        Assert.assertArrayEquals(expectedOutput, data);
+        assertArrayEquals(expectedOutput, data);
     }
 }

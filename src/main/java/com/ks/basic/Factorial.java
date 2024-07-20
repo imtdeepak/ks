@@ -1,9 +1,14 @@
 package com.ks.basic;
 
 /**
- * @author 212350436
+ * @author
  */
 public class Factorial {
+
+    public static void main(String args[]) {
+        Factorial factorial = new Factorial();
+        factorial.calculateFactorial(7);
+    }
 
     public void calculateFactorial(int n){
         int result  = 1;
@@ -12,10 +17,5 @@ public class Factorial {
         }
 
         System.out.println("Factorial value: " + result);
-    }
-
-    public static void main(String args[]) {
-        Factorial factorial = new Factorial();
-        factorial.calculateFactorial(7);
     }
 }

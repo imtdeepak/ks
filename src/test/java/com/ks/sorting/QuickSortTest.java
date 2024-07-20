@@ -9,9 +9,12 @@
  */
 package com.ks.sorting;
 
+import org.junit.jupiter.api.Test;
+
 import java.util.Arrays;
-import org.junit.Assert;
-import org.junit.Test;
+
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+
 
 /**
  * com.ks.sorting
@@ -20,17 +23,16 @@ import org.junit.Test;
  * @version 1.0 5/9/16
  * @since 1.0
  */
-public class QuickSortTest
-{
+public class QuickSortTest {
 
-    @Test
-    public void testInsertionSort(){
-        int[] input = {6,5,4,3,2,1,5};
-        int[] expectedOutput = {1,2,3,4,5,5,6};
-        System.out.println("input:" + Arrays.toString(input));
-        new QuickSort().sort(input, 0, input.length - 1);
-        int[] actualOutput = input;
-        System.out.println("actualOutput:" + Arrays.toString(actualOutput));
-        Assert.assertArrayEquals(expectedOutput, actualOutput);
-    }
+  @Test
+  public void testInsertionSort() {
+    int[] input = {6, 5, 4, 3, 2, 1, 5};
+    int[] expectedOutput = {1, 2, 3, 4, 5, 5, 6};
+    System.out.println("input:" + Arrays.toString(input));
+    new QuickSort().sort(input, 0, input.length - 1);
+    int[] actualOutput = input;
+    System.out.println("actualOutput:" + Arrays.toString(actualOutput));
+    assertArrayEquals(expectedOutput, actualOutput);
+  }
 }

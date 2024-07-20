@@ -5,6 +5,16 @@ public class MergeSort {
 
     //int helperArray[];
 
+    public static void main(String args[]) {
+        MergeSort mergeSort = new MergeSort();
+        int[] array = new int[]{54, 26, 93, }; //17, 77, 31, 44, 55, 20, 32, 45, 67, 2, 7};
+        mergeSort.sort(array);
+
+        for (int value : array) {
+            System.out.print(value + ", ");
+        }
+    }
+
     public void sort(int[] array) {
         if (array != null && array.length > 0) {
             //helperArray = new int[array.length];
@@ -61,16 +71,6 @@ public class MergeSort {
         // copying back the sorted list to array[]
         for (i = high; i >= low; i--) {
             array[i] = helperArray[--k];
-        }
-    }
-
-    public static void main(String args[]) {
-        MergeSort mergeSort = new MergeSort();
-        int[] array = new int[]{54, 26, 93, }; //17, 77, 31, 44, 55, 20, 32, 45, 67, 2, 7};
-        mergeSort.sort(array);
-
-        for (int value : array) {
-            System.out.print(value + ", ");
         }
     }
 }

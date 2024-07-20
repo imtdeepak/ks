@@ -4,37 +4,23 @@ package com.ks.datastructures.tree;
  * @author 212350436
  */
 public class BinarySearchTree {
-    public class Node {
-        private Node leftNode = null;
-        private Node rightNode = null;
-        private int data;
-
-        public Node getLeftNode() {
-            return leftNode;
-        }
-
-        public void setLeftNode(Node leftNode) {
-            this.leftNode = leftNode;
-        }
-
-        public Node getRightNode() {
-            return rightNode;
-        }
-
-        public void setRightNode(Node rightNode) {
-            this.rightNode = rightNode;
-        }
-
-        public int getData() {
-            return data;
-        }
-
-        public void setData(int data) {
-            this.data = data;
-        }
-    }
-
     private Node rootNode;
+
+    public static void main(String args[]) {
+        BinarySearchTree binarySearchTree = new BinarySearchTree();
+        binarySearchTree.insert(40);
+        binarySearchTree.insert(78);
+        binarySearchTree.insert(25);
+        binarySearchTree.insert(32);
+        binarySearchTree.insert(10);
+
+        binarySearchTree.traverse();
+        binarySearchTree.countNodes();
+        System.out.println("Find the give data: " + binarySearchTree.search(18));
+
+        System.out.println("Print preorder ");
+        binarySearchTree.printPreOrder();
+    }
 
     public void insert(int value) {
         rootNode = insertRecord(rootNode, value);
@@ -137,19 +123,33 @@ public class BinarySearchTree {
 
     }
 
-    public static void main(String args[]) {
-        BinarySearchTree binarySearchTree = new BinarySearchTree();
-        binarySearchTree.insert(40);
-        binarySearchTree.insert(78);
-        binarySearchTree.insert(25);
-        binarySearchTree.insert(32);
-        binarySearchTree.insert(10);
+    public class Node {
+        private Node leftNode = null;
+        private Node rightNode = null;
+        private int data;
 
-        binarySearchTree.traverse();
-        binarySearchTree.countNodes();
-        System.out.println("Find the give data: " + binarySearchTree.search(18));
+        public Node getLeftNode() {
+            return leftNode;
+        }
 
-        System.out.println("Print preorder ");
-        binarySearchTree.printPreOrder();
+        public void setLeftNode(Node leftNode) {
+            this.leftNode = leftNode;
+        }
+
+        public Node getRightNode() {
+            return rightNode;
+        }
+
+        public void setRightNode(Node rightNode) {
+            this.rightNode = rightNode;
+        }
+
+        public int getData() {
+            return data;
+        }
+
+        public void setData(int data) {
+            this.data = data;
+        }
     }
 }
