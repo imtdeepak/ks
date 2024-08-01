@@ -1,5 +1,6 @@
 package com.ks.com.ks.apple;
 
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -31,14 +32,12 @@ public class RemoveDuplicates
         for (int i = 1; i < len; ++i) {
             if (!hit[str[i]]) {
                 str[tail] = str[i];
-                ++tail;
                 hit[str[i]] = true;
-            } else {
-                str[tail] = 0;
                 ++tail;
             }
+
         }
-        return str;
+        return Arrays.copyOf(str, tail);
     }
 
     public static void removeDuplicatesEff1(char[] str) {
