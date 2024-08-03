@@ -9,6 +9,8 @@
  */
 package com.ks.sorting;
 
+import org.junit.jupiter.api.Test;
+
 import java.util.Arrays;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
@@ -18,7 +20,7 @@ import static org.junit.jupiter.api.Assertions.assertArrayEquals;
  */
 public class ShellSortTest
 {
-//    @Test
+    @Test
     public void testShellSort(){
         int[] data = {73, 67, 56, 32, 52, 41, 83, 37, 32, 10};
         int[] expectedOutput = {10, 32, 32, 37, 41, 52, 56, 67, 73, 83};
