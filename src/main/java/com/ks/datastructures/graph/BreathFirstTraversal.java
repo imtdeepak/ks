@@ -16,7 +16,7 @@ public class BreathFirstTraversal {
 
         BreathFirstTraversal breathFirstTraversal = new BreathFirstTraversal();
         ArrayList<Integer> traversal = breathFirstTraversal.bfsTraversal(
-                , graph);
+                3, graph);
 
         System.out.println(traversal);
 

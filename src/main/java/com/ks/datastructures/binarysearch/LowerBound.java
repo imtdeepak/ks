@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class LowerBound {
     public static void main(String[] args){
         int[] arr = { 2, 3, 5, 7, 8, 9, 10, 15, 18, 20, 25};
-        System.out.println(String.format("Array Provided : %s", Arrays.toString(arr)));
+        System.out.printf("Array Provided : %s%n", Arrays.toString(arr));
         System.out.println(lowerBound(arr, 11));
         System.out.println(lowerBound(arr, 19));
         System.out.println(lowerBound(arr, 6));
@@ -21,7 +21,7 @@ public class LowerBound {
     }
 
     private static int lowerBound(int[] arr, int key) {
-        System.out.println(String.format("Find Lower bound for %d", key));
+        System.out.printf("Find Lower bound for %d%n", key);
         int low = 0, high = arr.length;
         while (low < high) {
             int mid = low + (high - low)/2;
@@ -38,7 +38,7 @@ public class LowerBound {
         return low;
     }
     private static int lowerBoundBi(int[] arr, int key) {
-        System.out.println(String.format("Find Lower bound for %d", key));
+        System.out.printf("Find Lower bound for %d%n", key);
         int low = 0, high = arr.length;
         int ans = high;
         while (low<high) {
