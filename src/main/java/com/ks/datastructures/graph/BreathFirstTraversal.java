@@ -1,43 +1,87 @@
 package com.ks.datastructures.graph;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Queue;
 
-public class BreathFirstTraversal {
-    public static void main(String[] args){
-        ArrayList<ArrayList<Integer>> graph = new ArrayList<>();
-        graph.add((ArrayList<Integer>) Arrays.asList(1,2,3));
-        graph.add((ArrayList<Integer>) Arrays.asList(1, 2, 3));
-        graph.add((ArrayList<Integer>) Arrays.asList(1,4, 5, 3));
-        graph.add((ArrayList<Integer>) Arrays.asList(1, 2, 6));
-        graph.add((ArrayList<Integer>) Arrays.asList(2,6));
-        graph.add((ArrayList<Integer>) Collections.singletonList(2));
-        graph.add((ArrayList<Integer>) Arrays.asList(3,4));
-
-
-        BreathFirstTraversal breathFirstTraversal = new BreathFirstTraversal();
-        ArrayList<Integer> traversal = breathFirstTraversal.bfsTraversal(
-                3, graph);
-
-        System.out.println(traversal);
-
+public class BreathFirstTraversal
+{
+    private final int node;       /* total number of nodes in the graph */
+    private LinkedList<Integer>[] adj;      /* adjacency list */
+    private Queue<Integer> que;           /* maintaining a queue */
+    BreathFirstTraversal(int v)
+    {
+        node = v;
+        adj = new LinkedList[node];
+        for (int i=0; i<v; i++)
+        {
+            adj[i] = new LinkedList<>();
+        }
+        que = new LinkedList<>();
+    }
+    void insertEdge(int v,int w)
+    {
+        adj[v].add(w);      /* adding an edge to the adjacency list (edges are bidirectional in this example) */
     }
 
-    public ArrayList<Integer> bfsTraversal(int numberOfNodes, ArrayList<ArrayList<Integer>> adjList) {
-        ArrayList<Integer> bfs = new ArrayList<>();
-        boolean[] visited = new boolean[numberOfNodes];
-        Queue<Integer> queue = new LinkedList<>();
-        queue.add(0);
-        visited[0] = true;
-        while (!queue.isEmpty()) {
-            int node = queue.poll();
-            bfs.add(node);
-            for(Integer it : adjList.get(node)) {
-                if(!visited[it]) {
-                    visited[it] = true;
-                    queue.add(it);
+    /**
+     *
+     * @param n is  input node to do BFS Traverse
+     */
+
+    public ArrayList<Integer> BFS(int n)
+    {
+        ArrayList<Integer> bfsTraversedList = new ArrayList<>();
+        boolean[] visited = new boolean[node];       /* initialize boolean array for holding the data */
+        int a = 0;
+        System.out.printf("Breadth First Traversal for the graph from node %d is: => ", n);
+        //start from n node
+        visited[n]=true;
+        que.add(n);       /* root node is added to the top of the queue */
+        while (!que.isEmpty())
+        {
+            n = que.poll();        /* remove the top element of the queue */
+            bfsTraversedList.add(n);
+            for (int i = 0; i < adj[n].size(); i++)  /* iterate through the linked list and push all neighbors into queue */
+            {
+                a = adj[n].get(i);
+                if (!visited[a])      /* only insert visited into queue if they have not been explored already */
+                {
+                    visited[a] = true;
+                    que.add(a);
                 }
             }
         }
-        return bfs;
+        return bfsTraversedList;
+    }
+    public static void main(String[] args)
+    {
+        BreathFirstTraversal graph = new BreathFirstTraversal(6);
+        /** Graph example
+         *  0 -> 1, 3, 4
+         *  1 -> 2, 0
+         *  2 -> 1
+         *  3 -> 1, 5
+         *  4 -> 5, 1
+         *  5 -> 4, 3
+         *              0
+         *          1   3    4
+         *          2      5
+         */
+        graph.insertEdge(0, 1);
+        graph.insertEdge(0, 3);
+        graph.insertEdge(0, 4);
+        graph.insertEdge(4, 5);
+        graph.insertEdge(3, 5);
+        graph.insertEdge(1, 2);
+        graph.insertEdge(1, 0);
+        graph.insertEdge(2, 1);
+        graph.insertEdge(4, 1);
+        graph.insertEdge(3, 1);
+        graph.insertEdge(5, 4);
+        graph.insertEdge(5, 3);
+
+        System.out.println(graph.BFS(0));
+        System.out.println(graph.BFS(3));
     }
 }
